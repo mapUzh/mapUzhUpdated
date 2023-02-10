@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link  rel="stylesheet" href="/style/Style.css" type="text/css">
+</head>
+<body>
+<div id="map" style="height: 97vh"></div>
+<div id="subCont">
+    <div id="bottomPanel">
+        <div id="approvedButton">Підвердити</div>
+        <div id="rejectButton">Відхилити</div>
+    </div>
+</div>
+
+<script type="module" src="./getAllcoords.js"></script>
+<script type="module" src="./getSelfPosition.js"></script>
+<script type="module">
+
+    import {map} from "./getSelfPosition.js";
+    import {addMarker} from "./addMarker.js";
+    map.on('click', addMarker);
+
+
+
+</script>
+
+</body>
+</html>
